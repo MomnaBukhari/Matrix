@@ -25,6 +25,12 @@ return new class extends Migration
             $table->boolean('is_private')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // Google OAuth fields
+            $table->string('google_id')->nullable(); // Google ID
+            $table->string('avatar')->nullable(); // Google Avatar (Profile Picture)
+            $table->string('provider_name')->nullable(); // e.g., 'google'
+
             $table->rememberToken();
             $table->timestamps();
         });

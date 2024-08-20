@@ -25,3 +25,6 @@ Route::get('/dashboard', [UserController::class, 'dashboardPage'])->middleware('
 
 // Logout route
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);

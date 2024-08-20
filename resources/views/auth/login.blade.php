@@ -28,6 +28,10 @@
             </form>
         </div>
         <div>
+            <p>Or continue with:</p>
+            <a href="{{ route('google.login') }}" class="btn-google">Continue with Google</a>
+        </div>
+        <div>
             Not Registered Yet? <a href="{{ route('signup') }}">Sign up</a>
         </div>
     </div>

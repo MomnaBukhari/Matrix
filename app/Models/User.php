@@ -22,6 +22,9 @@ class User extends Authenticatable
         'age',
         'social_media_links',
         'is_private',
+        'google_id',
+        'avatar',
+        'provider_name',
     ];
 
     protected $hidden = [

@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+
 
 class AuthController extends Controller
 {
@@ -68,4 +70,44 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('status', 'Logged out successfully.');
     }
+
+
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    // Handle Google callback
+    public function handleGoogleCallback()
+{
+    try {
+        // Retrieve the user from Google without stateless
+        $googleUser = Socialite::driver('google')->user();
+
+        // Check if user already exists in the database
+        $user = User::where('email', $googleUser->getEmail())->first();
+
+        if ($user) {
+            // If user exists, log them in
+            Auth::login($user);
+        } else {
+            // If user doesn't exist, create a new user
+            $user = User::create([
+                'name' => $googleUser->getName(),
+                'email' => $googleUser->getEmail(),
+                'password' => Hash::make(uniqid()), // Set a random password
+            ]);
+
+            // Log the user in
+            Auth::login($user);
+        }
+
+        // Redirect to the dashboard
+        return redirect()->route('dashboard')->with('status', 'Logged in with Google!');
+    } catch (\Exception $e) {
+        return redirect()->route('login')->withErrors(['error' => 'Unable to login with Google.']);
+    }
+}
+
 }
