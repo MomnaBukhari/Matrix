@@ -1,0 +1,396 @@
+*{
+     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0%;
+    padding: 0;
+    line-height: 1.5; /* to set the line gap overall*/
+    overflow-x: hidden;
+
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff;
+}
+::selection {
+    background: #7d95b7;
+    color: #ffffff;
+}
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    width: 5px;
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+    width: 1em;
+    background-color: #fae6e9;
+    outline: 1px solid #c0adad;
+} */
+
+
+/* General Styles */
+
+
+.btn-primary {
+    width: 100%;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #fffefb;
+    color: #333333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, transform 0.3s ease;
+    -moz-transition: background-color 0.3s ease, transform 0.3s ease;
+    -ms-transition: background-color 0.3s ease, transform 0.3s ease;
+    -o-transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #333333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, transform 0.3s ease;
+    -moz-transition: background-color 0.3s ease, transform 0.3s ease;
+    -ms-transition: background-color 0.3s ease, transform 0.3s ease;
+    -o-transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #7d95b7;
+    color: #FFFFFF;
+    border-color: #000000;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #4c5e76;
+    border-color: #3f4957;
+}
+
+.error {
+    color: #F00;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 20px 50px; */
+    background-color: #c6d6ed;
+    opacity: 1;
+    /* For GSAP animation */
+    align-items: center;
+    padding: 1% 2%;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: visible;
+    height: 100%;
+}
+
+a{
+    margin: 0 15px;
+    color: #333333;
+    text-decoration: none;
+    position: relative;
+    overflow: visible;
+}
+a:hover{
+    /* font-weight: bold; */
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+    font-size: 105%;
+    text-decoration:underline;
+}
+
+
+/* Loading Page */
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    color: #c6d6ed;
+    opacity: 1;
+    /* For GSAP animation */
+}
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: linear-gradient(45deg, #c6d6ed, #fffefb);
+    text-align: center;
+    color: #333333;
+    opacity: 1;
+    /* For GSAP animation */
+}
+.hero-content{
+    height: 300px;
+}
+
+.hero-content h1 {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    /* margin-bottom: 25px; */
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.hero-buttons{
+    overflow: visible;
+    }
+
+.hero-buttons a:hover {
+text-decoration: none;
+}
+
+
+/* About Section */
+.about {
+    padding: 60px 50px;
+    background-color: #fffefb;
+    text-align: center;
+    opacity: 1;
+    /* For GSAP animation */
+}
+
+.about h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #7d95b7;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: #FFFFFF;
+    padding: 6% 2%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    padding: 60px 50px;
+    text-align: center;
+    opacity: 1;
+    /* For GSAP animation */
+}
+
+.features h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #7d95b7;
+}
+
+.features-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 5%;
+    padding-bottom: 3%;
+}
+
+.feature-item {
+    background-color: #FFFFFF;
+    padding: 5% 2%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 10px;
+    flex: 0 0 25%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 6% 4%;
+    background-color: #c6d6ed;
+    color: #333333;
+    text-align: center;
+    opacity: 1;
+    /* For GSAP animation */
+}
+
+.testimonials h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.testimonial-card {
+    padding: 20px;
+    background-color: #fffefb;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    color: #333333;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    background-color: #f0f5f9;
+}
+
+/* Footer */
+.footer {
+    padding: 40px 50px;
+    background-color: #fffefb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    /* For GSAP animation */
+}
+
+.footer a {
+    color: #333333;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer .social-icons a {
+    margin-right: 10px;
+}
+
+.footer .newsletter input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    margin-right: 10px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #7d95b7;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.footer .newsletter button:hover {
+    background-color: #c6d6ed;
+}
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.auth-container h2 {
+    font-family: 'Lora', serif;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c6d6ed;
+    background-color: #fffefb;
+    color: #333333;
+}
+
+
