@@ -122,7 +122,7 @@ a{
     position: relative;
     overflow: visible;
 }
-a:hover{
+.nav-menu a:hover{
     /* font-weight: bold; */
     transition-delay: 0.1s;
     transition-duration: 0.5s;

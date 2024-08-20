@@ -13,7 +13,6 @@
 </head>
 <body>
     <header class="header">
-
         <div class="navbar1">
             <p><a class="logo" href="/">MATRIX</a></p>
         </div>
@@ -23,7 +22,10 @@
                 <a href="/">Portfolio</a>
                 <a href="/">People</a>
                 <a href="/">Following</a>
-                <a href="">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
             </div>
         </nav>
     </header>

@@ -23,8 +23,8 @@
                 <a href="/">Home</a>
                 <a href="/">Explore</a>
                 <a href="/">How It Works</a>
-                <a href="">Sign Up</a>
-                <a href="">Login</a>
+                <a href="{{ route('signup') }}">Sign Up</a>
+                <a href="{{ route('login') }}">Login</a>
             </div>
         </nav>
     </header>

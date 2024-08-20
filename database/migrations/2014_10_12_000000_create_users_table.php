@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->text('about')->nullable();
+            $table->string('profile_picture')->nullable();
+            $table->string('qualification')->nullable();
+            $table->enum('gender', ['Male', 'Female', 'Trans']);
+            $table->date('date_of_birth')->nullable(); // Allow null
+            $table->integer('age')->nullable();
+            $table->json('social_media_links')->nullable();
+            $table->boolean('is_private')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
